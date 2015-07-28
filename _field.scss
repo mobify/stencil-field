@@ -1,0 +1,30 @@
+// field
+// ===
+
+// Configurable Variables
+// ---
+
+$field__variable-name: true !default;
+
+
+// Dependencies
+// ---
+
+@import 'stencil-variables/variables';
+@import 'level/level';
+
+
+// Field root
+// ---
+
+.c-field {
+    // Your component styles go here
+}
+
+
+// Field sub-component
+// ---
+
+.c-field__sub-component {
+    // Your component styles go here
+}
