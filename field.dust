@@ -1,3 +1,32 @@
-<div {?id}id="{.}"{/id} class="c-field {class}" {?role}role="{.}"{/role} data-adaptivejs-component="stencil-field">
-    Component stuff goes here!
+<div class="c-field {class}" {?id}id="{id}"{/id} data-adaptivejs-component="stencil-field">
+
+    <div class="c-field__inner {?isCheckRadio}c--is-check-radio{/isCheckRadio}">
+
+        {! Checkboxes and Radio buttons go before the Label !}
+        {?isCheckRadio}
+            <div class="c-field__input c--is-check-radio">
+                {?input}{input}{/input}
+            </div>
+        {/isCheckRadio}
+
+        {?label}
+            <div class="c-field__label">
+                {label}
+            </div>
+        {/label}
+
+        {! All other input types go after the Label !}
+        {^isCheckRadio}
+            <div class="c-field__input">
+                {?input}{input}{/input}
+            </div>
+        {/isCheckRadio}
+
+    </div>
+
+    {?caption}
+        <div class="c-field__caption">
+            {caption}
+        </div>
+    {/caption}
 </div>

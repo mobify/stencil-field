@@ -4,8 +4,67 @@
 
 {@c-spec for="Field Component" repository=repo}
     {@c-spec__test describe=".c-field"}
-        {@c-spec__case expect="Should have feature A"}
-            {@c-field /}
+
+        {@c-spec__case expect="Should have form text inputs"}
+            {@c-field}
+                {:label}<label for="textInput1">Text Input</label>
+                {:input}<input type="text" value="" name="textInput1" id="textInput1"></input>
+            {/c-field}
         {/c-spec__case}
+
+        {@c-spec__case expect="Should have format radio buttons"}
+            {@c-field isCheckRadio="true"}
+                {:label}<label for="radioButton1">Radio Buttons</label>
+                {:input}<input type="radio" value="1" name="radioButton" id="radioButton1"></input>
+            {/c-field}
+
+            {@c-field isCheckRadio="true"}
+                {:label}<label for="radioButton2">Radio Buttons</label>
+                {:input}<input type="radio" value="2" name="radioButton" id="radioButton2"></input>
+            {/c-field}
+
+            {@c-field isCheckRadio="true"}
+                {:label}<label for="radioButton3">Radio Buttons</label>
+                {:input}<input type="radio" value="3" name="radioButton" id="radioButton3"></input>
+            {/c-field}
+        {/c-spec__case}
+
+        {@c-spec__case expect="Should have format checkboxes"}
+            {@c-field isCheckRadio="true"}
+                {:label}<label for="checkboxButton1">Radio Buttons</label>
+                {:input}<input type="checkbox" value="1" name="checkboxButton1" id="checkboxButton1"></input>
+            {/c-field}
+
+            {@c-field isCheckRadio="true"}
+                {:label}<label for="checkboxButton2">Radio Buttons</label>
+                {:input}<input type="checkbox" value="2" name="checkboxButton2" id="checkboxButton2"></input>
+            {/c-field}
+
+            {@c-field isCheckRadio="true"}
+                {:label}<label for="checkboxButton3">Radio Buttons</label>
+                {:input}<input type="checkbox" value="3" name="checkboxButton3" id="checkboxButton3"></input>
+            {/c-field}
+        {/c-spec__case}
+
+        {@c-spec__case expect="Should have ensure labels don't wrap beneath their checkbox or radio button"}
+            {@c-field isCheckRadio="true"}
+                {:label}<label for="radioButton4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</label>
+                {:input}<input type="radio" value="4" name="isCheckRadio1" id="radioButton4"></input>
+            {/c-field}
+
+            {@c-field isCheckRadio="true"}
+                {:label}<label for="checkboxButton4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</label>
+                {:input}<input type="checkbox" value="2" name="isCheckRadio2" id="checkboxButton4"></input>
+            {/c-field}
+        {/c-spec__case}
+
+        {@c-spec__case expect="Should accept a caption"}
+            {@c-field}
+                {:label}<label for="textInput2">Text Input</label>
+                {:input}<input type="text" value="" name="textInput2" id="textInput2"></input>
+                {:caption}<span>This is a caption!</span>
+            {/c-field}
+        {/c-spec__case}
+
     {/c-spec__test}
 {/c-spec}

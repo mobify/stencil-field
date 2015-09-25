@@ -1,30 +1,81 @@
-// field
+// Field
 // ===
+//
+// Field is a wrapper for form fields. It is responsible for control the size
+// and spacing of the form field itself, its label, and the optional text label.
+// The field component is also responsible for apply states, such as errors.
 
-// Configurable Variables
+$field__min-height: $tap-size !default;
+
+
+// Field: Root
 // ---
-
-$field__variable-name: true !default;
-
-
-// Dependencies
-// ---
-
-@import 'stencil-variables/variables';
-@import 'level/level';
-
-
-// Field root
-// ---
+//
+// 1. iOS6 fix (TODO: add explanation why this is necessary)
 
 .c-field {
-    // Your component styles go here
+    flex: 1;
+    width: 100%; // 1
 }
 
 
-// Field sub-component
+// Field: Inner
 // ---
 
-.c-field__sub-component {
-    // Your component styles go here
+.c-field__inner {
+
+    &.c--is-check-radio {
+        display: flex;
+    }
+}
+
+
+// Field: Input
+// ---
+//
+// This container is for the actual form inputs itself. It is required in order
+// to achieve the necessary layout inside of the parent `.c-field__inner` wrap.
+
+.c-field__input {
+    flex: 1 1 auto;
+
+    &:not(.c--is-check-radio) {
+        margin-top: $unit/2;
+    }
+
+    &.c--is-check-radio {
+        flex: 0 0 auto;
+        margin-right: $unit;
+    }
+}
+
+
+// Field: Label
+// ---
+//
+// This container is for the input label. Click on this should select it's
+// respective input.
+//
+// Label should go above text inputs, textareas and selects. It should go after
+// checkboxes and radio buttons. You can do this by letting the `field`
+// component know whether a checkbox or radio button is present via the
+// `isCheckRadio` parameter.
+
+.c-field__label {
+    flex: 1 1 auto;
+}
+
+
+// Field: Caption
+// ---
+
+.c-field__caption {
+    margin-top: $unit/2;
+
+    // font-size: $caption-font-size;
+    // line-height: $small-line-height;
+
+    &.c--error {
+        // color: $error-color;
+    }
 }
