@@ -4,20 +4,20 @@
 
         {! Checkboxes and Radio buttons go before the Label !}
         {?isCheckRadio}
-            <div class="c-field__input c--is-check-radio">
+            <div class="c-field__input c--is-check-radio {inputClass}">
                 {?input}{input}{/input}
             </div>
         {/isCheckRadio}
 
         {?label}
-            <div class="c-field__label">
+            <div class="c-field__label {labelClass}">
                 {label}
             </div>
         {/label}
 
         {! All other input types go after the Label !}
         {^isCheckRadio}
-            <div class="c-field__input">
+            <div class="c-field__input {inputClass}">
                 {?input}{input}{/input}
             </div>
         {/isCheckRadio}
@@ -25,7 +25,7 @@
     </div>
 
     {?caption}
-        <div class="c-field__caption">
+        <div class="c-field__caption {captionClass}">
             {caption}
         </div>
     {/caption}
