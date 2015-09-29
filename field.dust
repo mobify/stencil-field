@@ -10,7 +10,12 @@
         {/isCheckRadio}
 
         {?label}
-            <div class="c-field__label {labelClass}">
+            {?isCheckRadio}
+                <div class="c-field__label c--for-check-radio {labelClass}">
+            {:else}
+                <div class="c-field__label {labelClass}">
+            {/isCheckRadio}
+
                 {label}
             </div>
         {/label}
