@@ -71,11 +71,14 @@ $field__min-height: $tap-size !default;
 
 .c-field__caption {
     margin-top: $unit/2;
+}
 
-    // font-size: $caption-font-size;
-    // line-height: $small-line-height;
 
-    &.c--error {
-        // color: $error-color;
-    }
+// Field: Error
+// ---
+
+.c-field__error {
+    margin-top: $unit/2;
+
+    color: $error-color;
 }
