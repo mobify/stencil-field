@@ -29,6 +29,12 @@
 
     </div>
 
+    {?error}
+        <div class="c-field__error {errorClass}">
+            {error}
+        </div>
+    {/error}
+
     {?caption}
         <div class="c-field__caption {captionClass}">
             {caption}
