@@ -10,19 +10,14 @@
         {/isCheckRadio}
 
         {?label}
-            {?isCheckRadio}
-                <div class="c-field__label c--for-check-radio {labelClass}">
-            {:else}
-                <div class="c-field__label {labelClass}">
-            {/isCheckRadio}
-
+            <div class="c-field__label {?isCheckRadio}c--for-check-radio{/isCheckRadio} {?error}c--error{/error} {labelClass}">
                 {label}
             </div>
         {/label}
 
         {! All other input types go after the Label !}
         {^isCheckRadio}
-            <div class="c-field__input {inputClass}">
+            <div class="c-field__input {?error}c--error{/error} {inputClass}">
                 {?input}{input}{/input}
             </div>
         {/isCheckRadio}
